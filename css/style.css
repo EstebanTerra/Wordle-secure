@@ -1,0 +1,242 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body{
+    height: 100vh;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    overflow: hidden;
+}
+
+
+#container{
+    display: flex;
+    background-color: #000;
+    height: 100%;
+    align-items: center;
+    flex-direction: column;
+    padding: 10px;
+}
+
+#game{
+    width: 100%;
+    max-width: 500px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+header{
+    border-bottom: 1px solid rgb(58, 58, 60);
+}
+
+.title{
+    color: gainsboro;
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin: 0.4rem 0;
+    text-align: center;
+}
+
+#board-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+}
+
+#board{
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-gap: 5px;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.square{
+    border: 2px solid rgb(58, 58, 60);
+    min-width: 60px;
+    min-height: 60px;
+    font-size: 50px;
+    font-weight: bold;
+    color: gainsboro;
+    text-transform: uppercase;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#keyboard-container{
+    height: 200px;
+}
+
+.keyboard-row{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin: 0 auto 8px;
+    touch-action: manipulation;
+}
+
+.keyboard-row button{
+    font-family: inherit;
+    font-weight: bold;
+    border: 0;
+    padding: 0;
+    height: 58px;
+    cursor: pointer;
+    background-color: rgb(129, 131, 132);
+    color: rgb(215, 218, 220);
+    flex-grow: 1;
+    text-transform: uppercase;
+    margin-right: 6px;
+    border-radius: 4px;
+    user-select: none;
+}
+
+.keyboard-row button.wide-button{
+    flex-grow: 1.5;
+}
+
+.spacer-half{
+    flex-grow: 0.5;
+}
+#trofeo{
+    color: #ffff00;
+}
+.modal {
+    display: none; 
+    position: fixed; 
+    z-index: 1; 
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Black background with opacity */
+}
+
+.modal-content {
+    background-color: #333;
+    color: white;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 300px;
+    text-align: center;
+    border-radius: 10px;
+}
+
+#restart-button {
+    background-color: #4CAF50; 
+    color: white;
+    padding: 10px 20px;
+    margin-top: 20px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+#restart-button:hover {
+    background-color: #45a049;
+}
+
+#play-again-button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#play-again-button {
+    background-color: #45a049;
+}
+
+.modal-content h2{
+    margin-bottom: 10px;
+}
+
+.modal-content button{
+    margin-top: 10px;
+}
+
+@media only screen and (max-width: 600px) {
+    .title {
+        font-size: 2rem; /* Reduce el tamaño de la fuente del título en pantallas pequeñas */
+    }
+
+    html{
+        background-color: #000;
+    }
+
+    body{
+        height: 80vh;
+    }
+
+    .keyboard-container{
+        bottom: 15vh;
+    }
+
+    .keyboard-row button {
+        font-size: 12px; /* Reduce el tamaño de las letras en los botones del teclado */
+        height: 48px; /* Reduce la altura de los botones en dispositivos móviles */
+        margin-right: 4px; /* Reduce el margen entre botones */
+    }
+
+    .keyboard-row button.wide-button {
+        flex-grow: 1.2; /* Reduce el tamaño de los botones anchos */
+    }
+
+    .square {
+        min-width: 40px; /* Ajusta el tamaño de los cuadrados del tablero */
+        min-height: 40px;
+        font-size: 30px;
+    }
+
+    #board-container {
+        padding: 4px; /* Reduce el padding en móviles */
+    }
+
+    #trofeo {
+        font-size: 24px; /* Ajusta el tamaño del ícono del trofeo */
+    }
+
+    .modal-content {
+        width: 90%; /* Haz que el modal sea más pequeño en pantallas móviles */
+    }
+
+    #word-progress{
+        display: none;
+    }
+}
+
+@media only screen and (min-width: 600px) and (max-width: 900px) {
+    .title {
+        font-size: 2.2rem; /* Ajusta el tamaño del título */
+    }
+
+    .keyboard-row button {
+        font-size: 14px;
+        height: 52px;
+        margin-right: 5px;
+    }
+
+    .square {
+        min-width: 55px;
+        min-height: 55px;
+        font-size: 45px;
+    }
+
+    .modal-content {
+        width: 80%; /* El modal será un poco más grande que en móviles */
+    }
+
+    #word-progress{
+        display: none;
+    }
+}

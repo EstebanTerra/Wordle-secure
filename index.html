@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en" translate="no">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wordle | SecureNet</title>
+    <script src="js/main.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="icon" href="Wordle-Secure-fotor-20241010215348.ico">
+</head>
+<body>
+    <div id="word-progress" style="position: absolute; top: 10px; right: 10px; font-size: 2rem; color: white;">
+        <p class="num">0/9</p>
+    </div>
+    <div id="container">
+        <div id="game">
+            <header>
+                <h1 class="title">Wordle | SecureNet</h1> 
+            </header>
+
+            <div id="board-container">
+                <div id="board"></div>
+            </div>
+
+            <div id="keyboard-container">
+                <div class="keyboard-row">
+                    <button data-key="q">q</button>
+                    <button data-key="w">w</button>
+                    <button data-key="e">e</button>
+                    <button data-key="r">r</button>
+                    <button data-key="t">t</button>
+                    <button data-key="y">y</button>
+                    <button data-key="u">u</button>
+                    <button data-key="i">i</button>
+                    <button data-key="o">o</button>
+                    <button data-key="p">p</button>
+                </div>
+                <div class="keyboard-row">
+                    <div class="spacer-half"></div>
+                    <button data-key="a">a</button>
+                    <button data-key="s">s</button>
+                    <button data-key="d">d</button>
+                    <button data-key="f">f</button>
+                    <button data-key="g">g</button>
+                    <button data-key="h">h</button>
+                    <button data-key="j">j</button>
+                    <button data-key="k">k</button>
+                    <button data-key="l">l</button>
+                    <button data-key="ñ">ñ</button>
+                    <div class="spacer-half"></div>
+                </div>
+                <div class="keyboard-row">
+                    <button data-key="enter" class="wide-button">Enter</button>
+                    <button data-key="z">z</button>
+                    <button data-key="x">x</button>
+                    <button data-key="c">c</button>
+                    <button data-key="v">v</button>
+                    <button data-key="b">b</button>
+                    <button data-key="n">n</button>
+                    <button data-key="m">m</button>
+                    <button data-key="del" class="wide-button">Del</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="win-modal" class="modal">
+        <div class="modal-content">
+            <p>¡Ganaste! <i class='bx bxs-trophy' id="trofeo"></i></p>
+            <button id="restart-button">Pasar a la siguiente palabra</button>
+        </div>
+    </div>
+    <div id="completion-modal" class="modal">
+        <div class="modal-content" id="modal-2">
+            <h2>¡Has completado todas las palabras!</h2>
+            <span id="correct-count"></span>
+            <button id="play-again-button">Volver a jugar</button>
+        </div>
+    </div>
+</body>
+</html>
